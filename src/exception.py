@@ -1,6 +1,6 @@
 import sys
 import logging
-import logger
+from src.logger import logging
 
 def error_message_detail(error, error_detail:sys):
     _, _, exc_tb = error_detail.exc_info() #exc_info returns a tuple whose three items are the (class, object, and traceback) for the exception.
