@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path: str = os.path.join('artifacts','preprocessor.pkl ') #save to model as a pickle file
+    preprocessor_obj_file_path: str = os.path.join('artifacts','preprocessor.pkl') #save to model as a pickle file
 
 class DataTransformation:
     def __init__(self):
@@ -47,7 +47,7 @@ class DataTransformation:
             cat_pipeline = Pipeline(
                 steps = [
                      ('Imputer', SimpleImputer(strategy='most_frequent')),
-                     ('one_hot_encoder', OneHotEncoder()),
+                     ('one_hot_encoder', OneHotEncoder(handle_unknown='ignore')),
                      ('Scaler', StandardScaler(with_mean=False))
                 ]
             )
@@ -62,7 +62,6 @@ class DataTransformation:
                 ]
 
             )
-
             return preprocessor
         except Exception as e:
             raise CustomException(e,sys)
