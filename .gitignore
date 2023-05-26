@@ -121,6 +121,8 @@ celerybeat.pid
 
 # Environments
 artifacts/
+app.py
+
 .env
 .venv
 env/
