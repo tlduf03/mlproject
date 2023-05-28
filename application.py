@@ -13,6 +13,11 @@ app = application
 def index():
     return render_template('index.html')
 
+# @app.get("/health")
+# def health():
+#     response.status = 200
+#     return response
+
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
@@ -37,4 +42,4 @@ def predict_datapoint():
         return render_template('home.html', results=results[0])
     
 if __name__=="__main__":
-    app.run() #run on http://127.0.0.1:5000 deafualt
+    app.run(host='0.0.0.0') #run on http://127.0.0.1:5000 deafualt
