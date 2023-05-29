@@ -5,11 +5,11 @@ from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipline
 
 application = Flask(__name__)
-app = application
+# app = application #comment out to deploy on EB
 
 #Route for a home page
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
@@ -18,7 +18,7 @@ def index():
 #     response.status = 200
 #     return response
 
-@app.route('/predictdata',methods=['GET','POST'])
+@application.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
         return render_template('home.html') #simple input data field will be here
@@ -42,4 +42,4 @@ def predict_datapoint():
         return render_template('home.html', results=results[0])
     
 if __name__=="__main__":
-    app.run(host='0.0.0.0') #run on http://127.0.0.1:5000 deafualt
+    application.run(host='0.0.0.0') #run on http://127.0.0.1:5000 deafualt
