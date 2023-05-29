@@ -9,8 +9,8 @@ class PredictPipline:
 
     def predict(self, features):
         try:
-            model_path = './artifacts/model.pkl'
-            preprocessor_path = './artifacts/preprocessor.pkl'
+            model_path = 'artifacts/model.pkl'
+            preprocessor_path = 'artifacts/preprocessor.pkl'
             
             #load model, preprocessor
             model = load_object(file_path=model_path)
