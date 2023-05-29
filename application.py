@@ -23,7 +23,7 @@ def index():
 def predict_datapoint():
     if request.method=='GET':
         return render_template('home.html') #simple input data field will be here
-    
+
     else: #POST request
         data=CustomData(
             gender=request.form.get('gender'), 
