@@ -121,8 +121,9 @@ celerybeat.pid
 
 # Environments
 artifacts/
-app.py
 
+.*
+!.github/
 .elasticbeanstalk/
 .env
 .venv
