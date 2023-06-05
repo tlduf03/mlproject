@@ -39,4 +39,4 @@ def predict_datapoint():
         return render_template('home.html', results=results[0])
     
 if __name__=="__main__":
-    app.run(port=5001, debug=True) #run on http://127.0.0.1:5000 deafualt ; => python3 app.py
+    app.run(port=8080) #run on http://127.0.0.1:5000 deafualt ; => python3 app.py
